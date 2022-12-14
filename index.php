@@ -60,6 +60,15 @@
           <option value="true">SI</option>
           <option value="false">NO</option>
         </select>
+        <label for="vote">Filtra per voto</label>
+        <select name="filterVote" id="vote" class="form-select" aria-label="Default select example">
+          <option value="default">DEFAULT</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
         <button type="submit" class="mt-3">Invia</button>
       </form>
       <table class="table table-dark table-striped"
