@@ -56,7 +56,7 @@
       <form action="index.php" method="GET" class="mb-3">
         <label for="parking">Filtra per parcheggio disponibile</label>
         <select name="filter" id="parking" class="form-select" aria-label="Default select example">
-          <option value="default">nessun filtro</option>
+          <option value="default">DEFAULT</option>
           <option value="true">SI</option>
           <option value="false">NO</option>
         </select>
