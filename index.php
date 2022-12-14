@@ -39,7 +39,8 @@
         ],
 
     ];
-    $parking = isset($_GET['filter']) ? $_GET['filter'] : 'no_filter';
+    $parking = isset($_GET['filter']) ? $_GET['filter'] : null;
+    $vote = isset($_GET['filterVote']) ? $_GET['filterVote'] : null;
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +87,7 @@
         ?>
         <tbody>
           <?php foreach( $hotels as $key => $hotel ) { ?>
-            <?php if($parking == 'true' && $hotel['parking'] === true) { ?>
+            <?php if($hotel['vote'] >= $vote && $parking == 'true' && $hotel['parking'] === true) { ?>
             <tr>
               <th scope="row"><?php echo $key ?></th>
                 <td><?php echo $hotel['name']; ?></td>
@@ -102,7 +103,7 @@
                 <td><?php echo $hotel['distance_to_center']; ?> km</td>
             </tr>
             
-            <?php } elseif($parking == 'false' && $hotel['parking'] === false) { ?>
+            <?php } elseif($hotel['vote'] >= $vote && $parking == 'false' && $hotel['parking'] === false) { ?>
             <tr>
               <th scope="row"><?php echo $key ?></th>
                 <td><?php echo $hotel['name']; ?></td>
@@ -117,7 +118,7 @@
                 <td><?php echo $hotel['vote']; ?></td>
                 <td><?php echo $hotel['distance_to_center']; ?> km</td>
             </tr>
-            <?php } elseif($parking == 'default') { ?>
+            <?php } elseif($hotel['vote'] >= $vote && $parking == 'default') { ?>
               <tr>
               <th scope="row"><?php echo $key ?></th>
                 <td><?php echo $hotel['name']; ?></td>
