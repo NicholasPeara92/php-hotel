@@ -63,7 +63,6 @@
         </select>
         <label for="vote">Filtra per voto</label>
         <select name="filterVote" id="vote" class="form-select" aria-label="Default select example">
-          <option value="default">DEFAULT</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
