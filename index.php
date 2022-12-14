@@ -53,14 +53,14 @@
   </head>
   <body>
     <div class="container">
-      <form action="index.php" method="GET">
+      <form action="index.php" method="GET" class="mb-3">
         <label for="parking">Filtra per parcheggio disponibile</label>
         <select name="filter" id="parking" class="form-select" aria-label="Default select example">
           <option selected>Parcheggio</option>
           <option value="true">SI</option>
           <option value="false">NO</option>
         </select>
-        <button type="submit">Invia</button>
+        <button type="submit" class="mt-3">Invia</button>
       </form>
       <table class="table table-dark table-striped"
         <thead>
@@ -79,9 +79,15 @@
               <th scope="row"><?php echo $key ?></th>
                 <td><?php echo $hotel['name']; ?></td>
                 <td><?php echo $hotel['description']; ?></td>
-                <td><?php echo $hotel['parking']; ?></td>
+                <td><?php 
+                  if($hotel['parking'] == true){
+                      echo 'Si';
+                  } else {
+                      echo 'No';
+                  } ?>
+                </td>
                 <td><?php echo $hotel['vote']; ?></td>
-                <td><?php echo $hotel['distance_to_center']; ?></td>
+                <td><?php echo $hotel['distance_to_center']; ?> km</td>
             </tr>
           <?php } ?>
         </tbody>
